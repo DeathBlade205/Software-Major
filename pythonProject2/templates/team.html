@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Roster - Sports Team Manager</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('team') }}">Team Roster</a></li>
+                <li><a href="{{ url_for('tasks_view') }}">Tasks</a></li>
+                <li><a href="{{ url_for('analytics') }}">Analytics</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="team">
+            <h1>Team Roster</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Availability</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for player in team %}
+                    <tr>
+                        <td>{{ player.name }}</td>
+                        <td>{{ player.role }}</td>
+                        <td>{{ player.availability }}</td>
+                        <td>
+                            <a href="{{ url_for('edit_player', player_id=player.id) }}">Edit</a>
+                            <form action="{{ url_for('delete_player', player_id=player.id) }}" method="post" style="display:inline;">
+                                <button type="submit">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <a class="cta-button" href="{{ url_for('add_player') }}">Add New Player</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Sports Team Manager. All rights reserved.</p>
+    </footer>
+</body>
+</html>
