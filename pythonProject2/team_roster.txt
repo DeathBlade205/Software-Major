@@ -1,0 +1,3 @@
+{"id": 1, "name": "Player1", "role": "Forward", "availability": "High"}
+{"id": 2, "name": "adds", "role": "Centerfffff", "availability": "Weekdays"}
+{"id": 3, "name": "k kn ", "role": "mmmm", "availability": "mmmm"}
