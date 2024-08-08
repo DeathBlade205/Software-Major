@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Sports Team Manager</title>
+    <title>About - Sports Team Manager</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        .about-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .about-section {
+            flex: 1 1 45%;
+            background-color: #fff;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .about-section img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .about-section h2 {
+            margin-top: 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -17,14 +44,19 @@
         </nav>
     </header>
     <main>
-        <section class="about">
+        <section>
             <h1>About Sports Team Manager</h1>
-            <p>The "Sports Team Manager" application is designed to streamline the management of esports teams by providing tools for scheduling, task management, and performance analytics. Our goal is to enhance team coordination and drive performance improvements.</p>
-            <div class="images">
-                <img src="{{ url_for('static', filename='image1.png') }}" alt="Team Management">
-                <img src="{{ url_for('static', filename='image2.png') }}" alt="Performance Analytics">
+            <p>The Sports Team Manager is an application designed to help sports teams manage their schedules, tasks, and match results. It features a calendar view for weekly schedules, task management, and performance analytics.</p>
+            <div class="about-container">
+                <div class="about-section">
+                    <h2>Dashboard Overview</h2>
+                    <img src="{{ url_for('static', filename='image1.png') }}" alt="Dashboard Image">
+                </div>
+                <div class="about-section">
+                    <h2>Analytics Overview</h2>
+                    <img src="{{ url_for('static', filename='image2.png') }}" alt="Analytics Image">
+                </div>
             </div>
-            <a class="cta-button" href="{{ url_for('login') }}">Log in to Get Started</a>
         </section>
     </main>
     <footer>

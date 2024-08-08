@@ -1,3 +1,2 @@
-{'opponent': 'Team A', 'result': 'Win'}
-{'opponent': 'Team B', 'result': 'Loss'}
-{'opponent': 'Team C', 'result': 'Win'}
+{"opponent": "Team A", "result": "Win", "id": 0}
+{"opponent": "Team B", "result": "Loss", "id": 1}

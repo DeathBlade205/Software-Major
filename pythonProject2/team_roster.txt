@@ -1,3 +1,2 @@
-{"id": 1, "name": "Player1", "role": "Forward", "availability": "High"}
-{"id": 2, "name": "adds", "role": "Centerfffff", "availability": "Weekdays"}
-{"id": 3, "name": "k kn ", "role": "mmmm", "availability": "mmmm"}
+{"id": 1, "name": "Sadat Sagar", "role": "Student", "availabilities": [{"start": "2024-08-10 04:06", "end": "2024-08-10 06:06"}]}
+{"id": 2, "name": "Ponk", "role": "Teacher", "availabilities": [{"start": "2024-08-10 16:08", "end": "2024-08-10 08:00"}]}

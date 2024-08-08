@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Sports Task Manager</title>
+    <title>Dashboard - Sports Team Manager</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='fullcalendar.min.css') }}">
-    <script src="{{ url_for('static', filename='moment.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='fullcalendar.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='custom.js') }}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
 </head>
 <body>
     <header>
@@ -25,30 +25,25 @@
         </nav>
     </header>
     <main>
-        <section class="dashboard">
+        <section>
             <h1>Dashboard</h1>
+            <p>Win Percentage: {{ win_percentage }}%</p>
+            <h2>Current Week</h2>
             <div id="calendar"></div>
-            <div class="container">
-                <div class="module">
-                    <h2>Team Roster</h2>
-                    <p>Manage team members and their availability.</p>
-                    <a class="cta-button" href="{{ url_for('team') }}">Manage Roster</a>
-                </div>
-                <div class="module">
-                    <h2>Task Management</h2>
-                    <p>Assign and track tasks within the team.</p>
-                    <a class="cta-button" href="{{ url_for('tasks_view') }}">Manage Tasks</a>
-                </div>
-                <div class="module">
-                    <h2>Match Analytics</h2>
-                    <p>Analyze match outcomes and performance metrics.</p>
-                    <a class="cta-button" href="{{ url_for('analytics') }}">View Analytics</a>
-                </div>
-            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; 2024 Sports Task Manager. All rights reserved.</p>
+        <p>&copy; 2024 Sports Team Manager. All rights reserved.</p>
     </footer>
+    <script>
+        $(document).ready(function() {
+            $('#calendar').fullCalendar({
+                defaultView: 'agendaWeek',  // Set to week view
+                allDaySlot: false,  // Disable all-day slots
+                slotLabelFormat: 'h(:mm)a',  // 12-hour time format
+                events: '/api/events'  // Fetch events from API endpoint
+            });
+        });
+    </script>
 </body>
 </html>

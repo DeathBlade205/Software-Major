@@ -1,2 +1,2 @@
-{'task': 'Review strategy', 'assigned_to': 'Player1', 'due_date': '2023-05-10'}
-{'task': 'Practice session', 'assigned_to': 'Player2', 'due_date': '2023-05-11'}
+{"task": "Review strategy", "assigned_to": "Player1", "due_date": "2023-05-10"}
+{"task": "Practice session", "assigned_to": "Player2", "due_date": "2023-05-11"}
